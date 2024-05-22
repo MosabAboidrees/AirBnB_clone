@@ -56,9 +56,11 @@ class TestCity(unittest.TestCase):
         """
         # Create an instance of the City class
         city_instance = City()
-        # Check if the default value of the attribute 'state_id' is an empty string
+        # Check if the default value of the attribute
+        # 'state_id' is an empty string
         self.assertEqual(city_instance.state_id, "")
-        # Check if the default value of the attribute 'name' is an empty string
+        # Check if the default value of the attribute
+        # 'name' is an empty string
         self.assertEqual(city_instance.name, "")
 
     def test_attribute_assignment(self):

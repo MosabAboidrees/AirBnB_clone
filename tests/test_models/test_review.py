@@ -77,7 +77,8 @@ class TestReview(unittest.TestCase):
         # Create a Review instance
         review_instance = Review()
         # Expected string format
-        expected_format = f"[Review] ({review_instance.id}) {review_instance.__dict__}"
+        expected_format = f"[Review] ({review_instance.id}) \
+            {review_instance.__dict__}"
         # Check if the string representation matches the expected format
         self.assertEqual(expected_format, review_instance.__str__())
 

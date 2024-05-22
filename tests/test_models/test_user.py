@@ -94,7 +94,8 @@ class TestUser(unittest.TestCase):
         # Check if 'created_at' in dictionary is a string
         self.assertEqual(str, type(user_dict['created_at']))
         # Check if 'created_at' matches the isoformat of created_at attribute
-        self.assertEqual(user_dict['created_at'], self.user1.created_at.isoformat())
+        self.assertEqual(user_dict['created_at'],
+                         self.user1.created_at.isoformat())
         # Check if 'created_at' attribute is a datetime object
         self.assertEqual(datetime.datetime, type(self.user1.created_at))
         # Check if '__class__' in dictionary matches the class name

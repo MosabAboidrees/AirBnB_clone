@@ -17,9 +17,7 @@ class Review(BaseModel):
 
     # Initialize the place_id attribute as an empty string
     place_id = ""
-    
     # Initialize the user_id attribute as an empty string
     user_id = ""
-    
     # Initialize the text attribute as an empty string
     text = ""

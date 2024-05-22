@@ -114,7 +114,8 @@ class TestPlace(unittest.TestCase):
         self.place_instance.city_id = "12345"  # Modify city_id
         self.place_instance.user_id = "abcde"  # Modify user_id
         self.place_instance.name = "Test Place"  # Modify name
-        self.place_instance.description = "Some new description"  # Modify description
+        # Modify description
+        self.place_instance.description = "Some new description"
         self.place_instance.number_rooms = 5  # Modify number_rooms
         self.place_instance.number_bathrooms = 3  # Modify number_bathrooms
         self.place_instance.max_guest = 7  # Modify max_guest
@@ -130,7 +131,8 @@ class TestPlace(unittest.TestCase):
         # Check if name is modified correctly
         self.assertEqual(self.place_instance.name, "Test Place")
         # Check if description is modified correctly
-        self.assertEqual(self.place_instance.description, "Some new description")
+        self.assertEqual(self.place_instance.description,
+                         "Some new description")
         # Check if number_rooms is modified correctly
         self.assertEqual(self.place_instance.number_rooms, 5)
         # Check if number_bathrooms is modified correctly

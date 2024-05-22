@@ -13,9 +13,8 @@ class City(BaseModel):
         state_id (str): The ID of the state the city belongs to.
         name (str): The name of the city.
     """
-    
+
     # Initialize the state_id attribute as an empty string
     state_id = ""
-    
     # Initialize the name attribute as an empty string
     name = ""

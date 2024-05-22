@@ -39,7 +39,8 @@ class TestFileStorage(unittest.TestCase):
         # Add base_model to storage
         self.storage.new(self.base_model)
         # Generate the key for the object
-        key = "{}.{}".format(self.base_model.__class__.__name__, self.base_model.id)
+        key = "{}.{}".format(self.base_model.__class__.__name__,
+                             self.base_model.id)
         # Check if the object is in the storage
         self.assertIn(key, self.storage._FileStorage__objects)
 
@@ -78,8 +79,11 @@ class TestFileStorage(unittest.TestCase):
         # Check if the objects dictionary is empty
         self.assertFalse(self.storage._FileStorage__objects)
 
+        # Mock the open function with data
     @patch("builtins.open", new_callable=mock_open,
-           read_data='{"BaseModel.1234": {"__class__": "BaseModel", "id":"1234", "created_at": "2021-11-02T14:15:22", "updated_at": "2021-11-02T14:15:22"}}')  # Mock the open function with data
+           read_data='{"BaseModel.1234": {"__class__": "BaseModel", \
+               "id":"1234", "created_at": "2021-11-02T14:15:22", \
+                   "updated_at": "2021-11-02T14:15:22"}}')
     def test_reload_with_data(self, mock_open):
         """Test reloading from a file with data"""
         # Reload the storage

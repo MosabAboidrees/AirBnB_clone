@@ -63,7 +63,8 @@ class HBNBCommand(cmd.Cmd):
             instance_id = command_args.strip().strip('"')
             self.do_destroy(f"{class_name} {instance_id}")
 
-        elif action == 'update':  # update BaseModel 1234-1234-1234 {"name": "John"}
+        # update BaseModel 1234-1234-1234 {"name": "John"}
+        elif action == 'update':
             command_args = command_args.split(',', 1)
             if len(command_args) != 2:
                 print("** invalid command **")
@@ -141,7 +142,8 @@ class HBNBCommand(cmd.Cmd):
             key = "{}.{}".format(args[0], args[1])  # create a key
             if key in self.objects.keys():  # if the key is in the objects
                 del self.objects[key]  # delete the object
-                storage._FileStorage__objects = self.objects  # update the objects
+                # update the objects
+                storage._FileStorage__objects = self.objects
                 storage.save()  # save the storage
             else:  # if the key is not in the objects
                 print("** no instance found **")
@@ -164,13 +166,15 @@ class HBNBCommand(cmd.Cmd):
             print("** invalid command **")
 
     def parseline(self, line):
-        """Parse the line to handle <class name>.all() and <class name>.count()."""
+        """Parse the line to handle <class name>.all()
+        and <class name>.count()."""
         original_line = line  # save the original line
         line = line.strip()  # remove leading and trailing whitespace
         class_name = None  # initialize class_name
         command = None  # initialize command
 
-        match = re.match(r'^(\w+)\.(all|count)\(\)$', line) # match the line
+        # match the line to the pattern <class name>.all()
+        match = re.match(r'^(\w+)\.(all|count)\(\)$', line)
         if match:  # if there is a match
             class_name = match.group(1)  # get the class name
             command = match.group(2)  # get the command

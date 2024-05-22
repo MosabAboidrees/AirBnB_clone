@@ -113,7 +113,8 @@ class TestState(unittest.TestCase):
         # Create a State instance
         state_instance = State()
         # Expected string format
-        expected_format = f"[State] ({state_instance.id}) {state_instance.__dict__}"
+        expected_format = f"[State] ({state_instance.id}) \
+            {state_instance.__dict__}"
         # Check if the string representation matches the expected format
         self.assertEqual(str(state_instance), expected_format)
 

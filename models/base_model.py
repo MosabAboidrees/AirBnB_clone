@@ -22,7 +22,6 @@ class BaseModel:
     def __init__(self, *args, **kwargs):
         """
         Initialize attributes for the BaseModel instance.
-        
         Args:
             *args: Variable length argument list.
             **kwargs: Arbitrary keyword arguments.
@@ -32,7 +31,8 @@ class BaseModel:
             for key, value in kwargs.items():
                 if key in ("created_at", "updated_at"):
                     # Convert string datetime to datetime object
-                    setattr(self, key, datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f"))
+                    setattr(self, key,
+                            datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f"))
                 elif key != "__class__":
                     # Set other attributes
                     setattr(self, key, value)
@@ -46,7 +46,8 @@ class BaseModel:
 
     def __str__(self):
         """Return string representation of the model object."""
-        return "[{}] ({}) {}".format(self.__class__.__name__, self.id, self.__dict__)
+        return "[{}] ({}) {}".format(self.__class__.__name__,
+                                     self.id, self.__dict__)
 
     def save(self):
         """
@@ -58,7 +59,6 @@ class BaseModel:
     def to_dict(self):
         """
         Generate a dictionary representation of the model object.
-        
         Returns:
             dict: A dictionary containing all keys/values of the instance.
         """

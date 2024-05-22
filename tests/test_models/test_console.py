@@ -21,7 +21,7 @@ class TestHBNBCommand(unittest.TestCase):
     Unit tests for the HBNBCommand class.
     """
 
-    @classmethod # Run once for the class
+    @classmethod  # Run once for the class
     def setUpClass(cls):
         """
         Set up the class-level test environment.
@@ -137,8 +137,10 @@ class TestHBNBCommand(unittest.TestCase):
             # Call the create command with BaseModel
             self.console_instance.do_create("BaseModel")
             # Check the output for a valid UUID
-            self.assertRegex(fake_output.getvalue().strip(),
-                             "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$")
+            self.assertRegex(
+                fake_output.getvalue().strip(),
+                "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]\
+                {4}-[0-9a-f]{12}$")
 
     def test_do_show_no_class(self):
         """

@@ -91,7 +91,7 @@ class TestBaseModel(unittest.TestCase):
         # as the string representation of the instance
         self.assertEqual(expected_str_format, str(self.base_model_instance))
 
-    @patch('models.storage') # Mock the storage module
+    @patch('models.storage')  # Mock the storage module
     def test_save(self, mock_storage):
         """
         Test the save method of a BaseModel instance.
