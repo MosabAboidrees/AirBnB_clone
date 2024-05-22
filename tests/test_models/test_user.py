@@ -17,7 +17,7 @@ class TestUser(unittest.TestCase):
         # Create a User instance
         cls.user1 = User()
         # Set the first_name attribute
-        cls.user1.first_name = "wad saif"
+        cls.user1.first_name = "Mosab Aboidrees"
 
     @classmethod
     def tearDown(cls):
